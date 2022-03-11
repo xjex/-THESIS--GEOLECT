@@ -1,0 +1,7 @@
+{
+  "name": "geolecv.1",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

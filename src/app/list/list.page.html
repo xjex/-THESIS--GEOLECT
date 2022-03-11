@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+    Logs
+    </ion-title>
+
+    <ion-buttons shape ="round" slot="end" (click) = "delall()">
+    CLEAR 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+
+  <ion-card *ngIf=profcard text-center (click)=toprofile()>
+    
+    <ion-avatar  >
+      <img src={{profs.PhotoUrl}}>
+    </ion-avatar>
+    <ion-card-title>{{profs.FirstName}} {{profs.LastName}} </ion-card-title>
+    <ion-text> </ion-text>
+    
+    <ion-text>@{{profs.Username}}  </ion-text>
+
+  </ion-card>
+  
+
+ 
+
+
+
+<ion-card *ngFor="let translates of translate; let i = index" >
+  {{translates[translates.length - i]}}
+<ion-item-sliding >
+    <ion-item-options side="start">
+      <ion-item-option (click)="liked(translates)"> <ion-button shape = 'round ' > <ion-icon name="heart"></ion-icon></ion-button></ion-item-option>
+     
+    </ion-item-options>
+
+    <ion-item >
+        <ion-label >
+          <ion-card-subtitle>{{translates.translatefrom}}</ion-card-subtitle>
+          <ion-card-title>{{translates.translatelog}}</ion-card-title>
+          <br>
+          <ion-card-subtitle>{{translates.translateto}}</ion-card-subtitle>
+          <ion-card-title>{{translates.translated}}</ion-card-title>
+          <ion-item-divider>
+          </ion-item-divider>
+         
+          <ion-card-subtitle>{{translates.date}} </ion-card-subtitle>
+         
+        </ion-label>
+       
+         
+      </ion-item>
+     
+      
+     
+     
+    
+
+         
+        
+     
+    
+   
+      
+    <ion-item-options side="end">
+      <ion-item-option (click)="del(translates)" color= 'danger' > <ion-button  color='danger'  > <ion-icon name="trash"></ion-icon></ion-button> </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-card>
+
+
+
+
+<ion-card *ngIf=profilecard >
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <p>asdasdasdsa</p>
+      </ion-col>
+      <ion-col>
+        <p>asdasdasdas</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ <ion-card>
+  <ion-item-divider>
+  <ion-card-title> {{profs.FirstName}} {{profs.LastName}}</ion-card-title>
+ 
+  </ion-item-divider>
+  <ion-card-subtitle>Name</ion-card-subtitle>
+ 
+  <ion-card-title> {{profs.Email}} </ion-card-title>
+  <ion-item-divider>
+  </ion-item-divider>
+  <ion-card-subtitle>Email</ion-card-subtitle>
+  
+
+ </ion-card>
+</ion-card>
+
+
+</ion-content>
+

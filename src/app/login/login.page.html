@@ -1,0 +1,79 @@
+<ion-content padding   class="ion-padding ion-text-center" >
+  
+  <img class="gw" src="/assets/logo1.png" alt="" />
+
+  
+  <ion-list *ngIf="forget">
+    <ion-card-subtitle>Please Enter Email </ion-card-subtitle>
+    <ion-item>
+      <ion-label position="floating">Email </ion-label>
+      <ion-input placeholeder="f_email" [(ngModel)]="f_email"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button (click)="submitforget()" class="login" shape=round >Send Reset Link</ion-button>
+    <br>
+    <div>
+      <span  >
+      <ion-text (click)="con_login()"><h1 class=forgottext> Continue Login  </h1></ion-text>
+      </span>
+    </div>
+
+  </ion-list>
+
+
+
+
+  <ion-list *ngIf='sign'>
+      
+
+
+      <ion-item>
+        <ion-label position="floating">Email </ion-label>
+        <ion-input placeholeder="email" [(ngModel)]="acc.email"></ion-input>
+      </ion-item>
+    
+
+    
+      <ion-item >
+        <ion-label position="floating" >Password  </ion-label>
+        
+        <ion-input  shape = round placeholeder="password" type="password" [(ngModel)]="acc.password"></ion-input>
+      </ion-item>
+
+            <div>
+              <span  >
+              <ion-text (click)="forgetpass()"><h1 class=forgottext>Forget Password?  </h1></ion-text>
+              </span>
+            </div>
+
+  
+   
+
+
+    
+
+    <ion-button (click)="signin()" class="login" shape=round >Login</ion-button>
+  
+    <div>
+      <span>
+      <ion-text (click)="signup()"><a >Sign Up</a></ion-text>
+      </span>
+    </div>
+      
+  
+    
+  </ion-list>
+<!-- 
+  <ion-card>
+    <ion-item-divider>
+      
+    </ion-item-divider>
+   
+    <ion-card-subtitle class="subMargin">Login With Social Media</ion-card-subtitle>
+
+    <ion-button (click)="googlesignin()" class=socialmedia shape=round full class="login"><ion-icon name="logo-google"></ion-icon>
+    </ion-button>
+
+    
+  </ion-card> -->
+</ion-content>

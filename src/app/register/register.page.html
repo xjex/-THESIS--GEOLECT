@@ -1,0 +1,67 @@
+<ion-content class="ion-padding ion-text-center">
+<ion-title> Create your Account</ion-title>
+
+  <ion-list>
+     <ion-grid>
+       <ion-row>
+         <ion-col>
+          <ion-item>
+            <ion-label position="floating">Name </ion-label>
+            <ion-input required placeholeder = "name" [(ngModel)]="name"> </ion-input>
+          </ion-item>
+         </ion-col>
+         <ion-col>
+          <ion-item>
+            <ion-label position="floating">Last Name </ion-label>
+            <ion-input placeholeder = "lname" [(ngModel)]="lname"> </ion-input>
+          </ion-item>
+         </ion-col>
+       </ion-row>
+     </ion-grid>
+     
+      
+        
+     
+      
+
+        
+      <ion-item>
+          <ion-label position="floating">Email </ion-label>
+          <ion-input required  placeholeder = "email" [(ngModel)]="email"> </ion-input>
+        </ion-item>
+     
+
+       
+      <ion-item>
+        <ion-label position="floating">Username </ion-label>
+        <ion-input  required placeholeder = "username" [(ngModel)]="username"> </ion-input>
+      </ion-item>
+    
+
+     
+      <ion-item>
+          <ion-label position="floating">Password </ion-label>
+          <ion-input  required placeholeder = "password" type="password" [(ngModel)]="password" ><p></p></ion-input>
+        </ion-item>
+     
+
+        
+        <ion-item>
+            <ion-label position="floating">Repeat Password </ion-label>
+            <ion-input required  placeholeder = "password" type="password" [(ngModel)]="rpassword" ><p></p></ion-input>
+          </ion-item>
+       
+
+       
+      </ion-list>
+   
+     
+       <ion-button shape ="round" (click)="tryRegister()"  full class="login">Register</ion-button>
+       
+  <br>
+ <br>
+  <p>Already Have an Account?</p>
+  <ion-button shape ="round" (click)="login()"  >Login</ion-button>
+
+
+</ion-content>

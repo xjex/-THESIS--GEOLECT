@@ -1,0 +1,150 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+      <ion-back-button
+
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  
+  <ion-card *ngIf=profcard text-center >
+    
+    <ion-avatar  (click)=topic()>
+      <img src={{profs.PhotoUrl}}>
+    </ion-avatar>
+   
+    
+    
+    <ion-item *ngIf = c_edit>
+      <ion-label >{{profs.FirstName}} {{profs.LastName}}</ion-label>
+    </ion-item>
+
+    <ion-grid *ngIf = edit>
+      <ion-row>
+        <ion-col>
+          <ion-item *ngIf = edit text-center>
+            <ion-input  [(ngModel)]="c_fname" placeholder ="{{profs.FirstName}} " ><p></p></ion-input>
+          </ion-item>
+          <ion-card-subtitle>First Name</ion-card-subtitle>
+        </ion-col>
+
+        <ion-col>
+          <ion-item *ngIf = edit text-center>
+            <ion-input  [(ngModel)]="c_lname" placeholder ="{{profs.LastName}}" ><p></p></ion-input>
+            
+          </ion-item>
+          <ion-card-subtitle>Last Name</ion-card-subtitle>
+        </ion-col>
+
+      </ion-row>
+      
+    </ion-grid>
+  
+     
+    <ion-card-subtitle>Name</ion-card-subtitle>
+
+    <ion-item *ngIf=c_edit>
+      <ion-label >{{profs.Username}}</ion-label>  
+    </ion-item>
+
+    <ion-item *ngIf = edit text-center> 
+      <ion-label position="stacked"> </ion-label>
+      <ion-input [(ngModel)]="c_username" placeholder ={{profs.Username}} ><p></p></ion-input>
+    </ion-item>
+
+    <ion-card-subtitle>User name</ion-card-subtitle>
+   
+   
+    <br>
+
+    
+    <ion-item *ngIf= c_edit>
+      <ion-label >  {{profs.Email}}  <ion-icon *ngIf='emailverified' name="checkmark-circle"></ion-icon> </ion-label>
+      <ion-button *ngIf='notverified' (click)=test() >Verify email</ion-button>
+    </ion-item>
+
+    <ion-item *ngIf = edit text-center>
+      <ion-label position="stacked"> </ion-label>
+      <ion-input [(ngModel)]="c_email" placeholder ={{profs.Email}} ><p></p></ion-input>
+    </ion-item>
+
+    <ion-card-subtitle>Email</ion-card-subtitle>
+   
+      <ion-item text-center *ngIf = edit> 
+        <ion-input  required  type="password" [(ngModel)]="c_password" placeholder ="Enter  Password" ><p></p></ion-input>
+      </ion-item>
+    
+    
+    <br>
+    <ion-button *ngIf= c_edit (click)=editprofile()>Edit Profile</ion-button>
+    <ion-button *ngIf=edit (click)=savechanges()>Save Changes</ion-button>
+    <br>
+    <a (click)= cancelprofile() *ngIf =edit> Cancel</a>
+
+
+  </ion-card>
+
+ 
+
+
+  <ion-card text-center >
+    <ion-item  (click)=cpcard() ><ion-icon slot = "start"name="hand"></ion-icon>
+      <ion-label class=menus>
+       Change Password ! 
+      </ion-label>
+    </ion-item>
+    
+     <ion-card *ngIf=notconfirmedpass text-center> 
+      <ion-item>
+       
+        <ion-input  required  type="password" [(ngModel)]="password" placeholder ="Old Password" ><p></p></ion-input>
+      </ion-item>
+      <ion-button  (click)='Changepass()'>Confirm</ion-button>
+      <br>
+      <a (click)= cancelpass()> Cancel</a>
+     </ion-card>
+
+     <ion-card *ngIf=confirmedpass text-center>
+      <ion-item>
+        
+        <ion-input  required placeholder = "Enter new password" type="password" [(ngModel)]="newpassword"  ><p></p></ion-input>
+      </ion-item>
+      <ion-item>
+        
+        <ion-input  required placeholder = "Re-type password" type="password" [(ngModel)]="repassword"  ><p></p></ion-input>
+      </ion-item>
+      <ion-button  (click)='newpass()'>Change Password</ion-button>
+      <br>
+      <a (click)= cancelpass()> Cancel</a>
+     </ion-card>
+
+
+  </ion-card>
+
+
+
+  
+  <div id='sign-in-button'></div>
+
+  
+  
+  
+  
+
+ 
+
+
+</ion-content>

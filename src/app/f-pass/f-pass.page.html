@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Upload Picture</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding text-center>
+ 
+  <ion-card >
+    <img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+    <ion-button (click)=upload() *ngIf="captureDataUrl" > Save Profile picture</ion-button>
+    <button ion-button (click)="upload()" *ngIf="captureDataUrl">Upload to Firebase!</button>
+   
+  </ion-card>
+  <ion-button (click)=getPicture(0)  > Choose from photos</ion-button>
+  <ion-button (click)=opencam() > Take a photo</ion-button>
+</ion-content>  
