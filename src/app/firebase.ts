@@ -1,12 +1,21 @@
-const config = {
-    apiKey: "AIzaSyDBn8jXs3OU6KK_nnWXcaJOhZ8SWJ9H3sM",
-    authDomain: "geolect-login.firebaseapp.com",
-    databaseURL: "https://geolect-login.firebaseio.com",
-    projectId: "geolect-login",
-    storageBucket: "geolect-login.appspot.com",
-    messagingSenderId: "872836659146",
-    appId: "1:872836659146:web:f2891e9e33cdefdd96c133",
-    measurementId: "G-FBL7SP94L2"
-  }
+const apiKey = process.env.apiKey;
+const authDomain = process.env.authDomain;
+const databaseURL = process.env.databaseURL;
+const projectId = process.env.projectId;
+const storageBucket = process.env.storageBucket;
+const messagingSenderId = process.env.messagingSenderId;
+const appId = process.env.appId;
+const measurementId = process.env.measurementId;
 
-  export default config 
+const config = {
+  apiKey: apiKey,
+  authDomain: authDomain,
+  databaseURL: databaseURL,
+  projectId: projectId,
+  storageBucket: storageBucket,
+  messagingSenderId: messagingSenderId,
+  appId: appId,
+  measurementId: measurementId,
+};
+
+export default config;
